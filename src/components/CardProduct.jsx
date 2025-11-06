@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import valideURLConvert from '../utils/valideURLConvert';
 import AddToCartButton from './AddToCartButton';
 import { useState } from 'react';
-import { pricewithDiscount } from '../utils/PriceWithDiscount';
+import { PricewithDiscount } from '../utils/PricewithDiscount';
 import { useGlobalContext } from '../provider/GlobalProvider';
 
 const CardProduct = ({ data }) => {
@@ -44,7 +44,7 @@ const CardProduct = ({ data }) => {
       <div className='px-2 lg:px-0 flex items-center justify-between gap-1 lg:gap-3 text-sm lg:text-base'>
         <div className='flex items-center gap-1'>
           <div className='font-semibold'>
-            {DisplayPriceInRupees(pricewithDiscount(data.price, data.discount))}
+            {DisplayPriceInRupees(PricewithDiscount(data.price, data.discount))}
           </div>
 
 
