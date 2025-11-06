@@ -30,12 +30,22 @@ const Login = () => {
     try {
       if (!phone) return alert("Enter phone number with country code, e.g. +91XXXXXXXXXX");
 
-      // Initialize recaptcha only once
-      if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+     if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        "recaptcha-container",
+        {
           size: "invisible",
-        });
-      }
+          callback: (response) => {
+            console.log("✅ reCAPTCHA solved");
+          },
+          "expired-callback": () => {
+            console.warn("⚠️ reCAPTCHA expired, please try again");
+          },
+        },
+        auth // ✅ Pass auth as the third argument (not first)
+      );
+    }
+
 
       const appVerifier = window.recaptchaVerifier;
 
