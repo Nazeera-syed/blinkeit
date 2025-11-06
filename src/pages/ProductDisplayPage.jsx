@@ -11,7 +11,7 @@ import image2 from '../assets/Best_Prices_Offers.png'
 import image3 from '../assets/Wide_Assortment.png'
 
 import AddToCartButton from '../components/AddToCartButton'
-import { PricewithDiscount } from '../utils/PriceWithDiscount'
+import { PricewithDiscount } from '../utils/PricewithDiscount'
 
 
 const ProductDisplayPage = () => {
