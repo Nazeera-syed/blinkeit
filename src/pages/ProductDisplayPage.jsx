@@ -11,7 +11,7 @@ import image2 from '../assets/Best_Prices_Offers.png'
 import image3 from '../assets/Wide_Assortment.png'
 
 import AddToCartButton from '../components/AddToCartButton'
-import { pricewithDiscount } from '../utils/PriceWithDiscount'
+import { PricewithDiscount } from '../utils/PriceWithDiscount'
 
 
 const ProductDisplayPage = () => {
@@ -136,7 +136,7 @@ const ProductDisplayPage = () => {
               <p className=''>Price</p> 
               <div className='flex items-center gap-2 lg:gap-4'>
                 <div className='border border-green-600 px-4 py-2 rounded bg-green-50 w-fit'>
-                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInRupees(pricewithDiscount(data.price,data.discount))}</p>
+                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInRupees(PricewithDiscount(data.price,data.discount))}</p>
                 </div>
                 {
                   data.discount && (
