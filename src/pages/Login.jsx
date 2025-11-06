@@ -32,17 +32,17 @@ const Login = () => {
 
      if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
         "recaptcha-container",
         {
           size: "invisible",
           callback: (response) => {
-            console.log("✅ reCAPTCHA solved");
+            console.log("✅ reCAPTCHA verified:", response);
           },
           "expired-callback": () => {
             console.warn("⚠️ reCAPTCHA expired, please try again");
           },
-        },
-        auth // ✅ Pass auth as the third argument (not first)
+        }
       );
     }
 
